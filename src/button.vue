@@ -1,7 +1,8 @@
 <template>
-    <button class="g-button" :class="{[`icon-${iconPosition}`]: true}">
-        <g-icon class="icon" v-if="icon" :name="icon"></g-icon>
-        <g-icon class="loading" name="loading"></g-icon>
+    <button class="g-button" :class="{[`icon-${iconPosition}`]: true}" 
+        @click="$emit('click')">
+        <g-icon class="icon" v-if="icon && !loading" :name="icon"></g-icon>
+        <g-icon class="loading icon" v-if="loading" name="loading"></g-icon>
         <div class="content">
             <slot></slot>
         </div>
@@ -13,6 +14,10 @@ export default {
     // props: ['icon', 'iconPosition']
     props: {
         icon: {},
+        loading: {
+            type: Boolean,
+            default: false
+        },
         iconPosition: {
             type: String,
             default: 'left',
@@ -34,7 +39,7 @@ export default {
     border-radius: var(--border-radius); border: 1px solid var(--border-color);
     background: var(--button-bg);
     display: inline-flex; justify-content: center; align-items: center;
-    vertical-align: middle; // 解决 行内元素的排列对齐问题
+    vertical-align: middle; // 解决 按钮和按钮之间 行内元素的排列对齐问题
     &:hover { border-color: var(--border-color-hover); }
     &:active { background-color: var(--button-active-bg); }
     &:focus { outline: none; }
