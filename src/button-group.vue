@@ -6,7 +6,6 @@
 <script>
 export default {
     mounted() {
-        console.log(this.$el.children);
         for (const node of this.$el.children) {
             const name = node.nodeName.toLowerCase()
             if (name !== 'button') {
