@@ -4,7 +4,8 @@
   "description": "学习UI框架",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev-test": "parcel watch test/* --no-cache & karma start",
+    "test": "parcel build test/* --no-minify && karma start --single-run"
   },
   "repository": {
     "type": "git",
@@ -28,7 +29,7 @@
     "@vue/component-compiler-utils": "^2.0.0",
     "chai": "^4.1.2",
     "chai-spies": "^1.0.0",
-    "karma": "^2.0.4",
+    "karma": "^2.0.5",
     "karma-chai": "^0.1.0",
     "karma-chai-spies": "^0.1.4",
     "karma-chrome-launcher": "^2.2.0",
@@ -37,7 +38,7 @@
     "mocha": "^5.2.0",
     "node-sass": "^4.9.0",
     "parcel-bundler": "^1.9.2",
-    "sinon": "^6.0.1",
+    "sinon": "^6.2.0",
     "sinon-chai": "^3.2.0",
     "vue-template-compiler": "^2.5.16"
   },
