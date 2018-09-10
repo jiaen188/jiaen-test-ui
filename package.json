@@ -1,8 +1,8 @@
 {
   "name": "jiaen-test-one-demo",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "学习UI框架",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "dev-test": "parcel watch test/* --no-cache & karma start",
     "test": "parcel build test/* --no-minify && karma start --single-run"
