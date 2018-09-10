@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - "8"
+addons:
+  chrome: stable
+brancher:
+  only:
+    - "master"
+script:
+  - "npm run test"
