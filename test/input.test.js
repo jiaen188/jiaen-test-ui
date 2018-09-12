@@ -76,56 +76,19 @@ describe('Button', () => {
         vm.$destroy()
       })
 
-      it('支持 change', () => {
-        vm = new Constructor().$mount()
-        const callback = sinon.fake()
-        vm.$on('change', callback)
-
-        // 触发input 的change 事件
-        let event = new Event('change')
-        let inputElement = vm.$el.querySelector('input')
-        inputElement.dispatchEvent(event)
-
-        expect(callback).to.have.been.calledWith(event)
-      })
-
-      it('支持 input', () => {
-        vm = new Constructor().$mount()
-        const callback = sinon.fake()
-        vm.$on('input', callback)
-
-        // 触发input 的input 事件
-        let event = new Event('input')
-        let inputElement = vm.$el.querySelector('input')
-        inputElement.dispatchEvent(event)
-
-        expect(callback).to.have.been.calledWith(event)
-      })
-
-      it('支持 focus', () => {
-        vm = new Constructor().$mount()
-        const callback = sinon.fake()
-        vm.$on('focus', callback)
-
-        // 触发input 的focus 事件
-        let event = new Event('focus')
-        let inputElement = vm.$el.querySelector('input')
-        inputElement.dispatchEvent(event)
-
-        expect(callback).to.have.been.calledWith(event)
-      })
-
-      it('支持 blur', () => {
-        vm = new Constructor().$mount()
-        const callback = sinon.fake()
-        vm.$on('blur', callback)
-
-        // 触发input 的blur 事件
-        let event = new Event('blur')
-        let inputElement = vm.$el.querySelector('input')
-        inputElement.dispatchEvent(event)
-
-        expect(callback).to.have.been.calledWith(event)
+      it('支持 change/ input/ focus/ blur', () => {
+        ['change', 'input', 'focus', 'blur'].forEach((eventName) => {
+          vm = new Constructor().$mount()
+          const callback = sinon.fake()
+          vm.$on(eventName, callback)
+  
+          // 触发input 的change 事件
+          let event = new Event(eventName)
+          let inputElement = vm.$el.querySelector('input')
+          inputElement.dispatchEvent(event)
+  
+          expect(callback).to.have.been.calledWith(event)
+        })
       })
 
     })
