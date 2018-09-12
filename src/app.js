@@ -15,6 +15,7 @@ new Vue({
         loading1: true,
         loading2: false,
         loading3: false,
+        message: '双向绑定'
     },
     created() {
         setTimeout(() => {

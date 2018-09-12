@@ -42,6 +42,11 @@
             <g-input value="change的测试用例" class="input-change" @change="inputChange"></g-input>
         </div>
         <div class="box">
+            <g-input v-model="message"></g-input>
+            <p>{{message}}</p>
+            <button @click="message += 1">+ 1</button>
+        </div>
+        <div class="box">
             <g-button :loading="loading1" @click="loading1 = !loading1">
                 按钮
             </g-button>

@@ -84,10 +84,20 @@ describe('Button', () => {
   
           // 触发input 的change 事件
           let event = new Event(eventName)
+
+          // 为了实现v-model，$emit($event.target.value), 而new 实例化的event只有isTrusted属性
+          Object.defineProperty(
+            event, 'target', {
+              value: { value: '为了支持 v-model' }, enumerable: true
+            }
+          )
+          // 这个不可行，只读属性，可以用上面的方法
+          // event.target = {value: '为了支持 v-model'}
+
           let inputElement = vm.$el.querySelector('input')
           inputElement.dispatchEvent(event)
   
-          expect(callback).to.have.been.calledWith(event)
+          expect(callback).to.have.been.calledWith('为了支持 v-model')
         })
       })
 
