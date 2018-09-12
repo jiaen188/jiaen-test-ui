@@ -16,9 +16,19 @@ new Vue({
         loading2: false,
         loading3: false,
     },
+    created() {
+        setTimeout(() => {
+            let event = new Event('change')
+            let inputElement = this.$el.querySelector('.input-change').querySelector('input')
+            console.log(inputElement)
+            inputElement.dispatchEvent(event)
+            console.log('用于检测 dispatchEvent的change和正常浏览器触发的change 的$event')
+        }, 3000); 
+    },
     methods: {
         inputChange(e) {
-            console.log(e.target.value)
+            console.log('dispatchEvent的 $event，虽然isTrusted: false，不可信，但是存在e.target.value，所以可用')
+            console.log(e)
         }
     }
 })
