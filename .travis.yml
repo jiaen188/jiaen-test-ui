@@ -13,5 +13,4 @@ brancher:
   only:
     - "master"
 script:
-  - "npm run start"
   - "npm run test"
