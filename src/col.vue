@@ -50,9 +50,9 @@ export default {
             return [
                 ...createClasses({span, offset}),
                 ...createClasses(ipad, 'ipad-'),
-                ...createClasses(narrowPc, 'narrowPc-'),
+                ...createClasses(narrowPc, 'narrow-pc-'),
                 ...createClasses(pc, 'pc-'),
-                ...createClasses(widePc, 'widePc-')
+                ...createClasses(widePc, 'wide-pc-')
             ]
         },
         colStyle () {
@@ -98,14 +98,14 @@ export default {
     }
 
     @media (min-width: 769px) {
-        $class-prefix: col-narrow-;
+        $class-prefix: col-narrow-pc-;
         @for $n from 1 through 24 {
             &.#{$class-prefix}#{$n} {
                 width: ($n / 24) * 100%;
             }
         }
 
-        $class-prefix: offset-narrow-;
+        $class-prefix: offset-narrow-pc-;
         @for $n from 1 through 24 {
             &.#{$class-prefix}#{$n} {
                 width: ($n / 24) * 100%;
