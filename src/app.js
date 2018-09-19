@@ -10,6 +10,8 @@ import Header from './header.vue'
 import Sider from './sider.vue'
 import Content from './content.vue'
 import Footer from './footer.vue'
+import Toast from './toast.vue'
+import plugin from './plugin.js'
 
 Vue.component('g-button', Button)
 Vue.component('g-icon', Icon)
@@ -22,6 +24,8 @@ Vue.component('g-header', Header)
 Vue.component('g-sider', Sider)
 Vue.component('g-content', Content)
 Vue.component('g-footer', Footer)
+Vue.component('g-toast', Toast)
+Vue.use(plugin)
 
 new Vue({
     el: '#app',
@@ -44,6 +48,9 @@ new Vue({
         inputChange(e) {
             console.log('dispatchEvent的 $event，虽然isTrusted: false，不可信，但是存在e.target.value，所以可用')
             console.log(e)
+        },
+        showToast() {
+            this.$toast('我是message')
         }
     }
 })
