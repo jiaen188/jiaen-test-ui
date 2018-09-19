@@ -36,6 +36,7 @@ new Vue({
         message: '双向绑定'
     },
     created() {
+        this.showToast()
         setTimeout(() => {
             let event = new Event('change')
             let inputElement = this.$el.querySelector('.input-change').querySelector('input')
@@ -50,7 +51,15 @@ new Vue({
             console.log(e)
         },
         showToast() {
-            this.$toast('我是message')
+            this.$toast('我是message', {
+                closeButton: {
+                  text: '知道了',
+                  callback(toast) {
+                    toast.log() // 测试调用 toast的 方法
+                    console.log('用户已经知道了')
+                  }
+                }
+            })
         }
     }
 })
