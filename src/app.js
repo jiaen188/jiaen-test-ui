@@ -51,14 +51,15 @@ new Vue({
             console.log(e)
         },
         showToast() {
-            this.$toast('我是message', {
+            this.$toast('<p>我是消息<strong>加粗</strong><a>qq</a></p>', {
                 closeButton: {
                   text: '知道了',
                   callback(toast) {
                     toast.log() // 测试调用 toast的 方法
                     console.log('用户已经知道了')
                   }
-                }
+                },
+                enableHtml: true
             })
         }
     }
