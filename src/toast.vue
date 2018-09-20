@@ -1,7 +1,9 @@
 <template>
     <div class="toast" ref="wrapper">
-        <slot v-if="!enableHtml"></slot>
+        <div class="message">
+             <slot v-if="!enableHtml"></slot>
         <div v-else v-html="$slots.default[0]"></div>
+        </div>
 
         <span class="line" ref="line"></span>
         <span v-if="closeButton" class="close" @click="onClickClose">
@@ -36,17 +38,23 @@ export default {
         }
     },
     mounted () {
-        if (this.autoClose) {
-            setTimeout(() => {
-                this.close()
-            }, this.autoCloseDelay * 1000);
-        }
-        this.$nextTick(() => { // 我们在plugin中，是先$mount, 再appendChild中body
-            this.$refs.line.style.height = 
-                `${this.$refs.wrapper.getBoundingClientRect().height}px`
-        })
+        this.updateStyle()
+        this.execAutoClose()
     },
     methods: {
+        updateStyle () {
+            this.$nextTick(() => { // 我们在plugin中，是先$mount, 再appendChild中body
+                this.$refs.line.style.height = 
+                    `${this.$refs.wrapper.getBoundingClientRect().height}px`
+            })
+        },
+        execAutoClose () {
+            if (this.autoClose) {
+                setTimeout(() => {
+                    this.close()
+                }, this.autoCloseDelay * 1000);
+            }
+        },
         close () {
             this.$el.remove()
             this.$destroy()
@@ -72,6 +80,9 @@ $toast-bg: rgba(0, 0, 0, .75);
     position: fixed; top: 0; left: 50%; transform: translateX(-50%); display: flex; 
     color: white; align-items: center; background: $toast-bg; border-radius: 4px;
     box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .5); padding: 0 16px;
+    .message {
+        padding: 8px 0;
+    }
     .close {
         padding-left: 16px;
         flex-shrink: 0;
