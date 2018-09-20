@@ -51,7 +51,7 @@ new Vue({
             console.log(e)
         },
         showToast() {
-            this.$toast('<p>我是消息<strong>加粗</strong><a>qq</a></p>', {
+            this.$toast(`<p>我是消息${parseInt(Math.random() * 100)}号。<strong>加粗</strong><a>qq</a></p>`, {
                 position: 'middle',
                 enableHtml: true,
                 closeButton: {
