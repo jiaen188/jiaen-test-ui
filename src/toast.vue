@@ -71,6 +71,7 @@ export default {
         },
         close () {
             this.$el.remove()
+            this.$emit('beforeClose')
             this.$destroy()
         },
         log () {
@@ -90,7 +91,8 @@ export default {
 $font-size: 14px;
 $toast-min-height: 40px;
 $toast-bg: rgba(0, 0, 0, .75);
-.toast { font-size: $font-size; line-height: 1.8; min-height: $toast-min-height;
+.toast { 
+    font-size: $font-size; line-height: 1.8; min-height: $toast-min-height;
     position: fixed; display: flex; 
     color: white; align-items: center; background: $toast-bg; border-radius: 4px;
     box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .5); padding: 0 16px;
