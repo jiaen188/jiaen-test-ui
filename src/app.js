@@ -36,7 +36,7 @@ new Vue({
         message: '双向绑定'
     },
     created() {
-        this.showToast()
+        this.showToast1()
         setTimeout(() => {
             let event = new Event('change')
             let inputElement = this.$el.querySelector('.input-change').querySelector('input')
@@ -50,9 +50,18 @@ new Vue({
             console.log('dispatchEvent的 $event，虽然isTrusted: false，不可信，但是存在e.target.value，所以可用')
             console.log(e)
         },
-        showToast() {
+        showToast1 () {
+            this.showToast('top')
+        },
+        showToast2 () {
+            this.showToast('middle')
+        },
+        showToast3 () {
+            this.showToast('bottom')
+        },
+        showToast(position) {
             this.$toast(`<p>我是消息${parseInt(Math.random() * 100)}号。<strong>加粗</strong><a>qq</a></p>`, {
-                position: 'middle',
+                position,
                 enableHtml: true,
                 closeButton: {
                   text: '知道了',
