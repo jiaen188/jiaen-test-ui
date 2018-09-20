@@ -1,6 +1,6 @@
 <template>
     <div class="toast">
-        <slot></slot>
+        <div v-html="$slots.default[0]"></div>
         <span class="line"></span>
         <span v-if="closeButton" class="close" @click="onClickClose">
             {{closeButton.text}}
