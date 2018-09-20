@@ -52,6 +52,8 @@ new Vue({
         },
         showToast() {
             this.$toast('<p>我是消息<strong>加粗</strong><a>qq</a></p>', {
+                position: 'middle',
+                enableHtml: true,
                 closeButton: {
                   text: '知道了',
                   callback(toast) {
@@ -59,7 +61,8 @@ new Vue({
                     console.log('用户已经知道了')
                   }
                 },
-                enableHtml: true
+                autoClose: false,
+                autoCloseDelay: 3
             })
         }
     }
