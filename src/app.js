@@ -70,8 +70,7 @@ new Vue({
                     console.log('用户已经知道了')
                   }
                 },
-                autoClose: false,
-                autoCloseDelay: 3
+                autoClose: 3
             })
         }
     }

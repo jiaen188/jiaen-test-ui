@@ -18,12 +18,11 @@
 export default {
     props: {
         autoClose: {
-            type: Boolean,
-            default: true
-        },
-        autoCloseDelay: {
-            type: Number,
-            default: 5
+            type: [Boolean, Number],
+            default: 5,
+            validator (value) {
+                return value === false || typeof value === 'number'
+            }
         },
         closeButton: {
             type: Object,
@@ -60,15 +59,15 @@ export default {
     methods: {
         updateStyle () {
             this.$nextTick(() => { // 我们在plugin中，是先$mount, 再appendChild中body
-                this.$refs.line.style.height = 
-                    `${this.$refs.toast.getBoundingClientRect().height}px`
+                this.$refs.line && (this.$refs.line.style.height = 
+                    `${this.$refs.toast.getBoundingClientRect().height}px`)
             })
         },
         execAutoClose () {
             if (this.autoClose) {
                 setTimeout(() => {
                     this.close()
-                }, this.autoCloseDelay * 1000);
+                }, this.autoClose * 1000);
             }
         },
         close () {
