@@ -42,7 +42,7 @@ describe('Toast', () => {
         let closeButton = vm.$el.querySelector('.close')
         expect(closeButton.textContent.trim()).to.eq('我是关闭')
 
-        setTimeout(() => {
+        setTimeout(() => { // 模拟用户手动点击了关闭，原来是 触发close太快，然后才nextTick，导致refs 已经是undefined，所以出现 style of undefined
           closeButton.click()
           expect(callback).to.have.been.called
           done()
