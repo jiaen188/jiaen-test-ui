@@ -12,6 +12,11 @@ import Content from './content.vue'
 import Footer from './footer.vue'
 import Toast from './toast.vue'
 import plugin from './plugin.js'
+import Tabs from './tabs.vue'
+import TabsHead from './tabs-head.vue'
+import TabsBody from './tabs-body.vue'
+import TabsItem from './tabs-item.vue'
+import TabsPane from './tabs-pane.vue'
 
 Vue.component('g-button', Button)
 Vue.component('g-icon', Icon)
@@ -26,6 +31,11 @@ Vue.component('g-content', Content)
 Vue.component('g-footer', Footer)
 Vue.component('g-toast', Toast)
 Vue.use(plugin)
+Vue.component('g-tabs', Tabs)
+Vue.component('g-tabs-head', TabsHead)
+Vue.component('g-tabs-body', TabsBody)
+Vue.component('g-tabs-item', TabsItem)
+Vue.component('g-tabs-pane', TabsPane)
 
 new Vue({
     el: '#app',
@@ -33,7 +43,8 @@ new Vue({
         loading1: true,
         loading2: false,
         loading3: false,
-        message: '双向绑定'
+        message: '双向绑定',
+        selectedTab: 'sports'
     },
     created() {
         this.showToast1()
