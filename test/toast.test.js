@@ -28,7 +28,7 @@ describe('Toast', () => {
         })
       })
 
-      it('接收 closeButton', () => { // 测试关闭按钮， 1、测试关闭 文字；2、测试 关闭事件触发
+      it('接收 closeButton', (done) => { // 测试关闭按钮， 1、测试关闭 文字；2、测试 关闭事件触发
         const callback = sinon.fake()
         const Contructor = Vue.extend(Toast)
         const vm = new Contructor({
@@ -42,8 +42,11 @@ describe('Toast', () => {
         let closeButton = vm.$el.querySelector('.close')
         expect(closeButton.textContent.trim()).to.eq('我是关闭')
 
-        closeButton.click()
-        expect(callback).to.have.been.called
+        setTimeout(() => {
+          closeButton.click()
+          expect(callback).to.have.been.called
+          done()
+        }, 200)
       })
 
       it('接收 enableHtml', () => { // 测试 是否有 id=test的标签，如果有，则表明转化为 html
