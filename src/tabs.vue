@@ -30,8 +30,9 @@ export default {
             eventBus: this.eventBus
         }
     },
-    created () {
+    mounted () {
         // this.$emit('update:selected', 'new value')
+        this.eventBus.$emit('update:selected', this.selected)
     }
 }
 </script>

@@ -1,23 +1,37 @@
 <template>
-    <div class="tabs-item" @click="xxx">
+    <div class="tabs-item" @click="xxx" :class="classes">
         <slot></slot>
     </div>
 </template>
 
 <script>
 export default {
+    inject: ['eventBus'],
+    data () {
+        return {
+            active: false
+        }
+    },
     props: {
         disabled: {
             type: Boolean,
             default: false
         },
-        name: String | Number,
-        required: true
+        name: {
+            type: String | Number,
+            required: true
+        }
     },
-    inject: ['eventBus'],
+    computed: {
+        classes () {
+            return {
+                active: this.active
+            }
+        }
+    },
     created() {
         this.eventBus.$on('update:selected', (name) => {
-            console.log(name)
+            this.active = name === this.name
         })
     },
     methods: {
@@ -30,6 +44,10 @@ export default {
 
 <style lang="scss" scoped>
 .tabs-item {
-
+    flex-shrink: 0;
+    padding: 0 2em;
+    &.active {
+        background: red;
+    }
 }
 </style>
