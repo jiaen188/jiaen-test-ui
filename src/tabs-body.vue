@@ -6,7 +6,9 @@
 
 <script>
 export default {
-    
+    inject: ['eventBus'],
+    created() {
+    }
 }
 </script>
 

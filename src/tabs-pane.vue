@@ -6,7 +6,12 @@
 
 <script>
 export default {
-    
+    inject: ['eventBus'],
+    created() {
+        this.eventBus.$on('update:selected', (name) => {
+            console.log(name)
+        })
+    }
 }
 </script>
 
