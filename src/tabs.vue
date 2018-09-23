@@ -7,6 +7,7 @@
 <script>
 import Vue from 'vue'
 export default {
+    name: 'GuluTabs',
     props: {
         selected: {
             type: String,
@@ -31,8 +32,16 @@ export default {
         }
     },
     mounted () {
-        // this.$emit('update:selected', 'new value')
-        this.eventBus.$emit('update:selected', this.selected)
+        this.$children.forEach(vm => {
+            if (vm.$options.name === 'GuluTabsHead') {
+                vm.$children.forEach(item => {
+                    if (item.$options.name === 'GuluTabsItem' && item.name === this.selected) {
+                        console.log(item.$el)
+                        this.eventBus.$emit('update:selected', this.selected, item)
+                    }
+                })
+            }
+        })
     }
 }
 </script>
