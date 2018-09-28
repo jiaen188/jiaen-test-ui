@@ -101,21 +101,39 @@
                         </g-tabs-body>
                     </g-tabs>
 
-                    <g-popover>
+                    <g-popover position="bottom">
                         <template slot="content">
-                            <div>popover内容popover内容popover内容popover内容popover内容</div>
+                            <div>下 --- popover内容popover内容popover内容popover内容popover内容</div>
                         </template>
                         <template>
-                            <g-button>点我</g-button>
+                            <g-button>下 --- 点我</g-button>
                         </template>
                     </g-popover>
 
                     <g-popover>
                         <template slot="content">
-                            <div>popover内容</div>
+                            <div>上 -- popover内容</div>
                         </template>
                         <template>
-                            <g-button>点我</g-button>
+                            <g-button>上 -- 点我</g-button>
+                        </template>
+                    </g-popover>
+
+                    <g-popover position="left">
+                        <template slot="content">
+                            <div>左 -- popover内容</div>
+                        </template>
+                        <template>
+                            <g-button>左 -- 点我</g-button>
+                        </template>
+                    </g-popover>
+
+                    <g-popover position="right">
+                        <template slot="content">
+                            <div>右 -- popover内容</div>
+                        </template>
+                        <template>
+                            <g-button>右 -- 点我</g-button>
                         </template>
                     </g-popover>
 
