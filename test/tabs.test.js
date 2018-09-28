@@ -22,7 +22,7 @@ describe('Tabs', () => {
         expect(Tabs).to.exist
     })
 
-    it('接收 selected 属性', () => {
+    it('接收 selected 属性', (done) => {
       const div = document.createElement('div')
       document.body.appendChild(div)
       div.innerHTML = `

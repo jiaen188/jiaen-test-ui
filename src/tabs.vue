@@ -31,19 +31,27 @@ export default {
             eventBus: this.eventBus
         }
     },
-    mounted () {
-        if (this.$children.length === 0) {
-            console.warn('tabs 没有子组件, 应该是 tabs-head、tabs-body，实际没有')
-        }
-        this.$children.forEach(vm => {
-            if (vm.$options.name === 'GuluTabsHead') {
-                vm.$children.forEach(item => {
-                    if (item.$options.name === 'GuluTabsItem' && item.name === this.selected) {
-                        this.eventBus.$emit('update:selected', this.selected, item)
-                    }
-                })
+    methods: {
+        checkChildren () {
+            if (this.$children.length === 0) {
+                console.warn('tabs 没有子组件, 应该是 tabs-head、tabs-body，实际没有')
             }
-        })
+        },
+        selectTab () {
+            this.$children.forEach(vm => {
+                if (vm.$options.name === 'GuluTabsHead') {
+                    vm.$children.forEach(item => {
+                        if (item.$options.name === 'GuluTabsItem' && item.name === this.selected) {
+                            this.eventBus.$emit('update:selected', this.selected, item)
+                        }
+                    })
+                }
+            })
+        }
+    },
+    mounted () {
+        this.checkChildren()
+        this.selectTab()
     }
 }
 </script>
