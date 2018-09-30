@@ -103,20 +103,24 @@
 
                     <div style="margin-bottom: 20px;">
                         <g-popover position="bottom">
-                            <template slot="content">
-                                <div>下 --- popover内容popover内容popover内容popover内容popover内容</div>
+                            <template slot="content" slot-scope="{close}">
+                                <div>下 -- 文字</div>
+                                <div>popover <a href="http://qq.com">看新闻</a>内容</div>
+                                <g-button @click="close">关闭</g-button>
                             </template>
                             <template>
-                                <g-button>下 --- 点我</g-button>
+                                <g-button>下 --- 点我 加了close</g-button>
                             </template>
                         </g-popover>
 
                         <g-popover>
                             <template slot="content">
-                                <div>上 -- popover内容</div>
+                                <div>上 -- popover内容
+                                    <g-button>关闭</g-button>
+                                </div>
                             </template>
                             <template>
-                                <g-button>上 -- 点我</g-button>
+                                <g-button>上 -- 点我 没加close</g-button>
                             </template>
                         </g-popover>
 
@@ -170,6 +174,7 @@
                         <g-popover position="right" trigger="hover">
                             <template slot="content">
                                 <div>右 -- popover内容</div>
+                                <div>popover <a href="http://qq.com">看新网</a> 内容</div>
                             </template>
                             <template>
                                 <g-button>右 -- hover我</g-button>
