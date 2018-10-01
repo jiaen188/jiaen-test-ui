@@ -50,7 +50,8 @@ new Vue({
         loading2: false,
         loading3: false,
         message: '双向绑定',
-        selectedTab: 'sports'
+        selectedTab: 'sports',
+        selectedCollapse: '2'
     },
     created() {
         this.showToast1()

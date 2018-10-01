@@ -28,6 +28,10 @@ export default {
     },
     mounted () {
         this.eventBus.$emit('update:selected', this.selected)
+        // item触发了toggle切换后，collapse通知外面改变
+        this.eventBus.$on('update:selected', (name) => {
+            this.$emit('update:selected', name)
+        })
     }
 }
 </script>

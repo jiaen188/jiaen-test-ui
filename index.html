@@ -182,11 +182,12 @@
                         </g-popover>
                     </div>
 
-                    <g-collapse selected="2" style="margin: 20px;">
+                    <g-collapse :selected.sync="selectedCollapse" style="margin: 20px;">
                         <g-collapse-item title="标题1" name="1">内容1</g-collapse-item>
                         <g-collapse-item title="标题2" name="2">内容2</g-collapse-item>
                         <g-collapse-item title="标题3" name="3">内容3</g-collapse-item>
                     </g-collapse>
+                    <div>collapse当前展开是{{selectedCollapse}}</div>
                     
                 </g-content>
                 <g-footer class="demo1">footer</g-footer>
