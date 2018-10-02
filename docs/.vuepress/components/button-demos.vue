@@ -3,15 +3,15 @@
         <g-button>默认按钮</g-button>
         <g-button icon="settings">icon按钮</g-button>
         <g-button :loading="true">loading按钮</g-button>
+        <g-button disabled>disabled按钮</g-button>
 
-        <pre> 
-            <code>{{content}}</code>
-        </pre>
+        <pre><code>{{content}}</code></pre>
     </div>
 </template>
 
 <script>
 import Button from '../../../src/button.vue'
+
 export default {
     components: {
         'g-button': Button
@@ -22,7 +22,8 @@ export default {
                 <g-button>默认按钮</g-button>
                 <g-button icon="settings">icon按钮</g-button>
                 <g-button :loading="true">loading按钮</g-button>
-            `
+                <g-button disabled>disabled按钮</g-button>
+            `.replace(/\t+| +/g, '').trim()
         }
     }
 }

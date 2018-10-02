@@ -1,4 +1,5 @@
 module.exports = {
+  base: '/test-demo/',
   title: 'jiaen-test-UI的介绍',
   description: '学习 vue 的UI框架开发',
   themeConfig: {
@@ -13,7 +14,15 @@ module.exports = {
       },
       {
         title: '组件',
-        children: ['/components/button']
+        children: [
+          '/components/button',
+          '/components/grid',
+          '/components/input',
+          '/components/layout',
+          '/components/popover',
+          '/components/tabs',
+          '/components/toast',
+        ]
       }
     ]
   }
