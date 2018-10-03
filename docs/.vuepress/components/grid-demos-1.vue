@@ -39,13 +39,13 @@
 </template>
 
 <script>
-import GRow from '../../../src/row.vue'
-import GCol from '../../../src/col.vue'
+import Row from '../../../src/row.vue'
+import Col from '../../../src/col.vue'
 
 export default {
     components: {
-        GRow, 
-        GCol
+        GRow: Row,
+        GCol: Col
     },
     data () {
         return {
