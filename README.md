@@ -1,5 +1,5 @@
 # 学习开发一系列vue的组件
-[![Build Status](https://www.travis-ci.org/jiaen188/test-demo.svg?branch=master)](https://www.travis-ci.org/jiaen188/test-demo)
+[![Build Status](https://www.travis-ci.org/jiaen188/jiaen-test-ui.svg?branch=master)](https://www.travis-ci.org/jiaen188/jiaen-test-ui)
 
 ## 介绍
 
