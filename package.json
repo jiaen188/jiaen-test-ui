@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jiaen188/test-demo.git"
+    "url": "git+https://github.com/jiaen188/jiaen-test-ui.git"
   },
   "keywords": [
     "vue",
@@ -22,9 +22,9 @@
   "author": "jiaen188",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jiaen188/test-demo/issues"
+    "url": "https://github.com/jiaen188/jiaen-test-ui/issues"
   },
-  "homepage": "https://github.com/jiaen188/test-demo#readme",
+  "homepage": "https://github.com/jiaen188/jiaen-test-ui#readme",
   "dependencies": {
     "vue": "2.5.16",
     "vue-hot-reload-api": "^2.3.0"

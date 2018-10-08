@@ -3,7 +3,7 @@
 
 ## 介绍
 
-学习以 vue 为基础，学习开发一些组件，目前有 button，grid，input，layout，popover，tabs，toast等组件，[预览地址](https://jiaen188.github.io/test-demo/components/button.html)
+学习以 vue 为基础，学习开发一些组件，目前有 button，grid，input，layout，popover，tabs，toast等组件，[预览地址](https://jiaen188.github.io/jiaen-test-ui/components/button.html)
 
 ## 开始使用
 

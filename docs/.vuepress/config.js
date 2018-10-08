@@ -1,5 +1,5 @@
 module.exports = {
-  base: '/test-demo/',
+  base: '/jiaen-test-ui/',
   title: 'jiaen-test-UI的介绍',
   description: '学习 vue 的UI框架开发',
   themeConfig: {
